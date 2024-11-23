@@ -11,7 +11,6 @@ namespace UserApi.Data
             using var context = new ApplicationDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>());
 
-            // Si ya hay usuarios, no se agrega más
             if (context.Users.Any())
                 return;
 

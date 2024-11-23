@@ -41,13 +41,12 @@ namespace UserApi.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(UserDto userDto)
         {
-            // Aquí podrías aplicar hashing a la contraseña
             var user = new User
             {
                 Nombre = userDto.Nombre,
                 Correo = userDto.Correo,
                 Apellidos = userDto.Apellidos,
-                PasswordHash = userDto.Password, // Aquí debería ir un hash real
+                PasswordHash = userDto.Password,
             };
 
             _context.Users.Add(user);
@@ -70,7 +69,7 @@ namespace UserApi.Controllers
             user.Nombre = userDto.Nombre;
             user.Correo = userDto.Correo;
             user.Apellidos = userDto.Apellidos;
-            user.PasswordHash = userDto.Password; // Asegúrate de aplicar hashing
+            user.PasswordHash = userDto.Password;
 
             _context.Entry(user).State = EntityState.Modified;
             await _context.SaveChangesAsync();
