@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9KGxTDjc1fs=",
+  "dgSpecHash": "lKaNpMLIhyg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\userApi\\UserApi\\UserApi.csproj",
+  "projectFilePath": "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\UserApi\\UserApi\\UserApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aawrf\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\aawrf\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
