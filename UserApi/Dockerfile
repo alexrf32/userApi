@@ -1,22 +1,26 @@
-# Usa una imagen base oficial de .NET 8 SDK para construir la aplicación
+# Etapa de construcción: compila la aplicación
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 
-# Copiar los archivos del proyecto y restaurar dependencias
-COPY *.csproj ./
+# Copiar el archivo de proyecto y restaurar dependencias
+COPY UserApi.csproj ./
 RUN dotnet restore
 
-# Copiar todo el código fuente y compilar la aplicación
+# Copiar el código fuente y compilar
 COPY . ./
-RUN dotnet publish -c Release -o out
+RUN dotnet publish -c Release -o out && \
+    rm -rf /root/.nuget/packages
 
-# Usa una imagen base de .NET 8 Runtime para ejecutar la aplicación
+# Etapa de ejecución: usa una imagen ligera para ejecutar la aplicación
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
+
+# Copiar la salida publicada desde la etapa de construcción
 COPY --from=build-env /app/out .
 
-# Exponer el puerto de la aplicación
+# Configurar la URL y exponer el puerto
+ENV ASPNETCORE_URLS=http://+:80
 EXPOSE 80
 
-# Comando para iniciar la aplicación
+# Comando de inicio
 ENTRYPOINT ["dotnet", "UserApi.dll"]

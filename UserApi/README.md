@@ -38,3 +38,10 @@ Sigue estos pasos para ejecutar el proyecto localmente:
 ```bash
 git clone https://github.com/tu-usuario/tu-repositorio.git
 cd tu-repositorio/UserApi
+
+### 2. Ejecutar el repositorio
+- Creamos las migraciones: dotnet ef migrations add InitialCreate
+- Aplicamos a la base de datos: dotnet ef database update
+- Corremos el proyecto: dotnet run
+
+Con estos pasos deberiamos tener la base de datos creada con los 51 usuarios.
