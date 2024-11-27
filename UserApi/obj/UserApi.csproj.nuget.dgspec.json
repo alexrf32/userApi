@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\UserApi\\UserApi\\UserApi.csproj": {}
+    "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\userApi\\UserApi\\UserApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\UserApi\\UserApi\\UserApi.csproj": {
+    "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\userApi\\UserApi\\UserApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\UserApi\\UserApi\\UserApi.csproj",
+        "projectUniqueName": "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\userApi\\UserApi\\UserApi.csproj",
         "projectName": "UserApi",
-        "projectPath": "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\UserApi\\UserApi\\UserApi.csproj",
+        "projectPath": "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\userApi\\UserApi\\UserApi.csproj",
         "packagesPath": "C:\\Users\\aawrf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\UserApi\\UserApi\\obj\\",
+        "outputPath": "C:\\Users\\aawrf\\OneDrive\\Escritorio\\userApi\\userApi\\UserApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aawrf\\AppData\\Roaming\\NuGet\\NuGet.Config"

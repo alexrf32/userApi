@@ -11,18 +11,25 @@ namespace UserApi.Data
             using var context = new ApplicationDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>());
 
+            // Verifica si ya hay datos en la tabla Users
             if (context.Users.Any())
                 return;
 
-            // Crear usuarios de ejemplo
-            var users = new List<User>
+            // Generar 51 usuarios dinámicamente
+            var users = new List<User>();
+            for (int i = 1; i <= 51; i++)
             {
-                new User { Nombre = "Usuario 1", Correo = "usuario1@correo.com", Apellidos = "Apellido 1", PasswordHash = "hashedpassword1" },
-                new User { Nombre = "Usuario 2", Correo = "usuario2@correo.com", Apellidos = "Apellido 2", PasswordHash = "hashedpassword2" },
-                // Agregar hasta 51 usuarios o más según sea necesario
-                new User { Nombre = "Usuario 51", Correo = "usuario51@correo.com", Apellidos = "Apellido 51", PasswordHash = "hashedpassword51" }
-            };
+                users.Add(new User
+                {
+                    Nombre = $"Usuario {i}",
+                    Apellidos = $"Apellido {i}",
+                    Correo = $"usuario{i}@correo.com",
+                    PasswordHash = $"hashedpassword{i}", // Contraseña simulada
+                    EstaEliminado = i % 10 == 0 
+                });
+            }
 
+            // Insertar usuarios en la base de datos
             context.Users.AddRange(users);
             context.SaveChanges();
         }
